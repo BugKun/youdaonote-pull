@@ -383,7 +383,7 @@ class YoudaoNoteSession(requests.Session):
             f.write(response.content)  # response.content 本身就是字节类型
 
         # 如果文件是 .note 类型，将其转换为 MarkDown 类型
-        if youdao_file_suffix == '.note':
+        if youdao_file_suffix != '.md':
             try:
                 self.covert_xml_to_markdown(file_path)
             except ET.ParseError:
@@ -712,7 +712,7 @@ def main():
     start_time = int(time.time())
 
     try:
-        config_dict = check_config('config.json')
+        config_dict = check_config('config.prod.json')
         session = YoudaoNoteSession()
         root_id = session.check_and_login(config_dict['username'], config_dict['password'])
         print('正在 pull，请稍后 ...')

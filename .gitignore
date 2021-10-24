@@ -2,3 +2,6 @@
 *.iml
 cookies.json
 .python-version
+python_venv
+config.prod.json
+note/
