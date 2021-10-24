@@ -3,3 +3,4 @@
 title youdao-sync
 
 bash sync.sh
+pause

@@ -3,3 +3,4 @@
 title youdao-pull
 
 bash pull.sh
+pause
