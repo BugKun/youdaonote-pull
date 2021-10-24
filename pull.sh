@@ -4,6 +4,7 @@
 set -o errexit
 
 source python_venv/Scripts/activate && python ./pull.py && deactivate
+cd note
 git add .
 git commit -m 'pull: 拉取笔记'
 git push origin master
