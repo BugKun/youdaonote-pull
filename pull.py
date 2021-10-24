@@ -306,7 +306,7 @@ class YoudaoNoteSession(requests.Session):
         tip = ''  # 用于输出云笔记原格式
 
         # 如果有有道云笔记是「笔记」类型，则设置提示类型
-        if youdao_file_suffix == '.note':
+        if youdao_file_suffix != '.md':
             tip = '，云笔记原格式为 .note'
             local_file_basename = os.path.join(local_dir, os.path.splitext(name)[0])  # 没有后缀的本地文件
             # 使用 .md 后缀判断是否在本地存在
